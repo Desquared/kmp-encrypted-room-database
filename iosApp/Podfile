@@ -1,0 +1,7 @@
+target 'iosApp' do
+  use_frameworks!
+  platform :ios, '16.0'
+  pod 'composeApp', :path => '../composeApp'
+  pod 'SQLCipher', '~> 4.8.0'
+end
+
