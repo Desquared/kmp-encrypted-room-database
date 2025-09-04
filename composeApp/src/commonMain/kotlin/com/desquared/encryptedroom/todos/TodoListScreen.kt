@@ -1,4 +1,4 @@
-package com.desquared.encryptedroom
+package com.desquared.encryptedroom.todos
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
@@ -37,7 +37,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.desquared.encryptedroom.db.TodoEntity
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

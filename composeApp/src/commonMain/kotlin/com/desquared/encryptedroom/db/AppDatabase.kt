@@ -5,6 +5,8 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 import androidx.sqlite.SQLiteConnection
+import com.desquared.encryptedroom.todos.TodoDao
+import com.desquared.encryptedroom.todos.TodoEntity
 
 const val DATABASE_VERSION = 1
 const val DATABASE_NAME = "encrypted_room"

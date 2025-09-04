@@ -1,13 +1,12 @@
 package com.desquared.encryptedroom.todos
 
-import android.content.Context
-import com.desquared.encryptedroom.db.TodoEntity
-import com.desquared.encryptedroom.db.getDatabase
+import com.desquared.encryptedroom.db.AppDatabase
 import kotlinx.coroutines.flow.Flow
 import kotlin.random.Random
 
-class AndroidTodoRepository(context: Context) : TodoRepository {
-    private val dao = getDatabase(context).getDao()
+class TodoRepositoryImpl(private val db: AppDatabase) : TodoRepository {
+
+    private val dao = db.getDao()
 
     override fun getAll(): Flow<List<TodoEntity>> = dao.getAll()
 

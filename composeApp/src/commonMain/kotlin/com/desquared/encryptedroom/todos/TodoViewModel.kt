@@ -1,6 +1,5 @@
 package com.desquared.encryptedroom.todos
 
-import com.desquared.encryptedroom.db.TodoEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -10,7 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class TodoController(private val repository: TodoRepository) {
+class TodoViewModel(private val repository: TodoRepository) {
     private val _todos = MutableStateFlow<List<TodoEntity>>(emptyList())
     val todos: StateFlow<List<TodoEntity>> = _todos.asStateFlow()
 
@@ -18,19 +17,17 @@ class TodoController(private val repository: TodoRepository) {
 
     init {
         scope.launch {
-            repository.getAll().collect { list ->
-                _todos.value = list
-            }
+            repository.getAll().collect { _todos.value = it }
         }
     }
 
-    fun add(title: String) {
+    fun addTodo(title: String) {
         scope.launch {
             repository.addTodo(title)
         }
     }
 
-    fun remove(todo: TodoEntity) {
+    fun deleteTodo(todo: TodoEntity) {
         scope.launch {
             repository.deleteTodo(todo)
         }

@@ -1,4 +1,4 @@
-package com.desquared.encryptedroom.db
+package com.desquared.encryptedroom.todos
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

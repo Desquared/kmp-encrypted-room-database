@@ -1,6 +1,5 @@
 package com.desquared.encryptedroom.todos
 
-import com.desquared.encryptedroom.db.TodoEntity
 import kotlinx.coroutines.flow.Flow
 
 interface TodoRepository {
