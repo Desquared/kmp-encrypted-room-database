@@ -1,35 +1,40 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+![Kotlin](https://img.shields.io/badge/Kotlin-2.1.21-blue?logo=kotlin) ![Room](https://img.shields.io/badge/Room-2.7.0-blueviolet?logo=android) ![SQLCipher](https://img.shields.io/badge/SQLCipher-4.9.0%20(Android)%20%7C%204.8.0%20(iOS)-orange) ![KSP](https://img.shields.io/badge/KSP-2.1.21--2.0.2-yellow) ![AndroidX%20SQLite](https://img.shields.io/badge/AndroidX%20SQLite-2.5.2-lightgrey)
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+  
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+## Encrypted Room Database Example (Kotlin Multiplatform)
+This repository showcases a Kotlin Multiplatform (KMP) example that implements an encrypted Room database shared across Android and iOS using SQLCipher. The project demonstrates full integration of Room in shared code with Compose for Android and Compose Multiplatform for iOS, including schema setup, platform-specific drivers, and end-to-end encryption support.
 
-### Build and Run Android Application
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
+**Article:** [Read the full guide here](https://desquared.notion.site/Encrypted-Room-Database-in-Kotlin-Multiplatform-KMP-for-Android-iOS-25b9aac7b816801b9067c627602335c6)
 
-### Build and Run iOS Application
+  
 
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+### Overview
+
+-  **Platforms:** Android & iOS (KMP)
+
+-  **Encryption:** SQLCipher
+
+-  **Database:** Room
+
+-  **UI:** Compose Multiplatform (or purely native UI)
+  
+
+### Features
+
+- Shared Room entities and DAOs
+
+- Platform-specific database helpers
+
+- SQLCipher integration for both platforms
+
+- Example migration and schema management
+
+  
+
+### How to Use
+
+See the article for a step-by-step guide on dependencies, Gradle setup, code structure, and platform-specific configuration.
 
 ---
-
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
